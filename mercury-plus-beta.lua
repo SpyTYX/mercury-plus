@@ -91,7 +91,7 @@ local Library = {
 			StrongText = Color3.fromHSV(0, 0, 1),        
 			WeakText = Color3.fromHSV(0, 0, 172/255)
 		},
-        VSCodeAbyss = {
+       		VSCodeAbyss = {
 			Main = Color3.fromRGB(0, 12, 24),
 			Secondary = Color3.fromRGB(6, 6, 34),
 			Tertiary = Color3.fromRGB(5, 19, 54),
@@ -115,7 +115,7 @@ local Library = {
 			StrongText = Color3.fromHSV(0, 0, 1),        
 			WeakText = Color3.fromHSV(0, 0, 172/255)
 		},
-        Nyaaa = {
+     		Nyaaa = {
 			Main = Color3.fromRGB(147, 19, 203),
 			Secondary = Color3.fromRGB(205, 19, 255),
 			Tertiary = Color3.fromRGB(100, 19, 203),
