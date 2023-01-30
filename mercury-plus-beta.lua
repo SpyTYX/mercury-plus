@@ -123,6 +123,14 @@ local Library = {
 			StrongText = Color3.fromHSV(0, 0, 1),        
 			WeakText = Color3.fromHSV(0, 0, 172/255)
 		},
+		BloodMoon = {
+			Main = Color3.fromRGB(45, 0, 0),
+			Secondary = Color3.fromRGB(82, 0, 0),
+			Tertiary = Color3.fromRGB(116, 0, 0),
+
+			StrongText = Color3.fromHSV(0, 0, 1),        
+			WeakText = Color3.fromHSV(0, 0, 172/255)
+		},
 		
 		Vaporwave = {},
 		OperaGX = {},
@@ -141,8 +149,8 @@ local Library = {
 		StrongText = {},
 		WeakText = {}
 	},
-	WelcomeText = nil,
-	DisplayName = nil,
+	WelcomeText = 'MercuryPlus',
+	DisplayName = 'Welcome to MercuryPlus',
 	DragSpeed = 0.06,
 	LockDragging = false,
 	ToggleKey = Enum.KeyCode.Delete,
@@ -485,10 +493,10 @@ function Library:create(options)
 	end
 
 	options = self:set_defaults({
-		Name = "NovalineHub",
+		Name = "MercuryPlus",
 		Size = UDim2.fromOffset(600, 400),
 		Theme = self.Themes[settings.Theme],
-		Link = "https://github.com/deeeity/mercury-lib"
+		Link = "https://github.com/SpyTYX/mercury-plus"
 	}, options)
 
 	if getgenv and getgenv().MercuryUI then
@@ -970,10 +978,26 @@ function Library:create(options)
 	})
 
 	settingsTab:button{
-		Name = "Destroy",
-		Description = "Destroys Mercury and MercuryPlus Instance.",
+		Name = "Discord Server",
+		Description = "Copy Discord Server of MercuryPlus to Clipboard",
 		Callback = function()
-			Library:Destroy()
+			
+		end,
+	}
+
+	settingsTab:button{
+		Name = "Kill Roblox",
+		Description = "Shutdowns Roblox Instance.",
+		Callback = function()
+			game:Shutdown()
+		end,
+	}
+
+	settingsTab:button{
+		Name = "Discord Server",
+		Description = "Copy Discord Server of MercuryPlus to Clipboard",
+		Callback = function()
+			setclipboard = 'https://discord.gg/JvxXM6rkNn'
 		end,
 	}
 
