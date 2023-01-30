@@ -141,8 +141,8 @@ local Library = {
 		StrongText = {},
 		WeakText = {}
 	},
-	WelcomeText = 'Welcome to NovalineHub!',
-	DisplayName = 'By Moons',
+	WelcomeText = nil,
+	DisplayName = nil,
 	DragSpeed = 0.06,
 	LockDragging = false,
 	ToggleKey = Enum.KeyCode.Delete,
