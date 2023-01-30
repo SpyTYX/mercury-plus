@@ -963,15 +963,6 @@ function Library:create(options)
 			Library.DragSpeed = (20 - value)/100
 		end,
 	}
-
-	settingsTab:button{
-		Name = "Destroy",
-		Description = "Destroys MercuryUI and MercuryPlus",
-		Callback = function()
-			Library:Destroy()
-		end,
-	}
-
 	local creditsTab = Library.tab(mt, {
 		Name = "Credits",
 		Internal = creditsTabIcon,
