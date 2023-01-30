@@ -1,4 +1,4 @@
-[![discord server](https://cdn.discordapp.com/attachments/1045747155463327804/1069657561659347054/mercuryplus-banner.png)](https://discord.gg/jaunk8nhN5)
+[![discord server](https://cdn.discordapp.com/attachments/1063180819952324719/1069684390172577843/image.png)](https://discord.gg/jaunk8nhN5)
 
 
 # Mercury Plus
