@@ -719,7 +719,7 @@ function Library:create(options)
 		Position = UDim2.new(0, 5, 1, -6),
 		Size = UDim2.new(0.2, 0, 0, 10),
 		Font = Enum.Font.SourceSans,
-		Text = "Status | Idle",
+		Text = "Playing MercuryPlus",
 		Theme = {TextColor3 = "Tertiary"},
 		TextSize = 14,
 		TextXAlignment = Enum.TextXAlignment.Left
@@ -838,7 +838,7 @@ function Library:create(options)
 
 		local displayName = profile:object("TextLabel", {
 			RichText = true,
-			Text = "Welcome, <font color='rgb(" ..  math.floor(c.R*255) .. "," .. math.floor(c.G*255) .. "," .. math.floor(c.B*255) .. ")'> <b>" .. LocalPlayer.DisplayName .. "</b> </font>",
+			Text = "Welcome to MercuryPlus, <font color='rgb(" ..  math.floor(c.R*255) .. "," .. math.floor(c.G*255) .. "," .. math.floor(c.B*255) .. ")'> <b>" .. LocalPlayer.DisplayName .. "</b> </font>",
 			TextScaled = true,
 			Position = UDim2.new(0, 105,0, 10),
 			Theme = {TextColor3 = {"Tertiary", 10}},
@@ -890,7 +890,7 @@ function Library:create(options)
 		Position = UDim2.new(1, -10, 1, -10),
 		AnchorPoint = Vector2.new(1, 1),
 		Image = "http://www.roblox.com/asset/?id=8559790237"
-	}):tooltip("settings")
+	}):tooltip("Settings")
 
 	local creditsTabIcon = profile:object("ImageButton", {
 		BackgroundTransparency = 1,
@@ -899,7 +899,7 @@ function Library:create(options)
 		Position = UDim2.new(1, -44, 1, -10),
 		AnchorPoint = Vector2.new(1, 1),
 		Image = "http://www.roblox.com/asset/?id=8577523456"
-	}):tooltip("credits")
+	}):tooltip("Credits")
 
 	local themesTabIcon = profile:object("ImageButton", {
 		BackgroundTransparency = 1,
@@ -908,7 +908,7 @@ function Library:create(options)
 		Position = UDim2.new(1, -78, 1, -10),
 		AnchorPoint = Vector2.new(1, 1),
 		Image = "http://www.roblox.com/asset/?id=8577523456"
-	}):tooltip("credits")
+	}):tooltip("Themes")
 
 	local quickAccess = homePage:object("Frame", {
 		BackgroundTransparency = 1,
@@ -2987,7 +2987,7 @@ function Library:_theme_selector()
 
 	local themeContainer = self.container:object("Frame", {
 		Theme = {BackgroundColor3 = "Secondary"},
-		Size = UDim2.new(1, -20, 0, 127)
+		Size = UDim2.new(1, -20, 0, 200)
 	}):round(7)
 
 	local text = themeContainer:object("TextLabel", {
