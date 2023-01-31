@@ -907,7 +907,7 @@ function Library:create(options)
 		Size = UDim2.fromOffset(24, 24),
 		Position = UDim2.new(1, -78, 1, -10),
 		AnchorPoint = Vector2.new(1, 1),
-		Image = "http://www.roblox.com/asset/?id=8577523456"
+		Image = "http://www.roblox.com/asset/?id=12332662978"
 	}):tooltip("Themes")
 
 	local quickAccess = homePage:object("Frame", {
@@ -2987,14 +2987,14 @@ function Library:_theme_selector()
 
 	local themeContainer = self.container:object("Frame", {
 		Theme = {BackgroundColor3 = "Secondary"},
-		Size = UDim2.new(1, -20, 0, 425)
+		Size = UDim2.new(1, -20, 0, 420)
 	}):round(7)
 
 	local text = themeContainer:object("TextLabel", {
 		BackgroundTransparency = 1,
 		Position = UDim2.fromOffset(10, 5),
 		Size = UDim2.new(0.5, -10, 0, 22),
-		Text = "Select MercuryPlus Themes",
+		Text = "MercuryPlus Themes",
 		TextSize = 22,
 		Theme = {TextColor3 = "StrongText"},
 		TextXAlignment = Enum.TextXAlignment.Left
