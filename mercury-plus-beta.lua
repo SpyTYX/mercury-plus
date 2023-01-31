@@ -25,11 +25,10 @@
 ██                      ████████████████      █████████████████      ██████████████████
 
 
-last edited: 30/01
+last edited: 31/01
 developers:
-  Moons:
-     v3rm: Moozys
-     discord: Moons#9999
+
+Moons (V3rm: Moozys) (Discord: Moons#9999)
 
 ]]
 
@@ -958,6 +957,12 @@ function Library:create(options)
 		Icon = "rbxassetid://8559790237"
 	})
 
+	local creditsTab = Library.tab(mt, {
+		Name = "Credits",
+		Internal = creditsTabIcon,
+		Icon = "http://www.roblox.com/asset/?id=8577523456"
+	})
+
 
 	settingsTab:keybind{
 		Name = "Toggle Key",
@@ -987,20 +992,7 @@ function Library:create(options)
 			Library.DragSpeed = (20 - value)/100
 		end,
 	}
-	local creditsTab = Library.tab(mt, {
-		Name = "Credits",
-		Internal = creditsTabIcon,
-		Icon = "http://www.roblox.com/asset/?id=8577523456"
-	})
-
-	settingsTab:button{
-		Name = "Discord Server",
-		Description = "Copy Discord Server of MercuryPlus to Clipboard",
-		Callback = function()
-			
-		end,
-	}
-
+	
 	settingsTab:button{
 		Name = "Kill Roblox",
 		Description = "Shutdowns Roblox Instance.",
