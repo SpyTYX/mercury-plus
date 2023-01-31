@@ -114,7 +114,7 @@ local Library = {
 			StrongText = Color3.fromHSV(0, 0, 1),        
 			WeakText = Color3.fromHSV(0, 0, 172/255)
 		},
-        Nyaaa = {
+        Nya = {
 			Main = Color3.fromRGB(147, 19, 203),
 			Secondary = Color3.fromRGB(205, 19, 255),
 			Tertiary = Color3.fromRGB(100, 19, 203),
@@ -126,6 +126,38 @@ local Library = {
 			Main = Color3.fromRGB(45, 0, 0),
 			Secondary = Color3.fromRGB(82, 0, 0),
 			Tertiary = Color3.fromRGB(116, 0, 0),
+
+			StrongText = Color3.fromHSV(0, 0, 1),        
+			WeakText = Color3.fromHSV(0, 0, 172/255)
+		},
+		Sunrise = {
+			Main = Color3.fromRGB(217, 84, 1),
+			Secondary = Color3.fromRGB(141, 60, 5),
+			Tertiary = Color3.fromRGB(60, 14, 4),
+
+			StrongText = Color3.fromHSV(0, 0, 1),        
+			WeakText = Color3.fromHSV(0, 0, 172/255)
+		},
+		Sunrise2 = {
+			Main = Color3.fromRGB(202, 74, 19),
+			Secondary = Color3.fromRGB(209, 103, 13),
+			Tertiary = Color3.fromRGB(247, 160, 5),
+
+			StrongText = Color3.fromHSV(0, 0, 1),        
+			WeakText = Color3.fromHSV(0, 0, 172/255)
+		},
+		Light = {
+			Main = Color3.fromRGB(225, 225, 235),
+			Secondary = Color3.fromRGB(205, 215, 205),
+			Tertiary = Color3.fromRGB(205, 205, 205),
+
+			StrongText = Color3.fromHSV(0, 0, 1),        
+			WeakText = Color3.fromHSV(0, 0, 172/255)
+		},
+		Ocean = {
+			Main = Color3.fromRGB(21, 81, 107),
+			Secondary = Color3.fromRGB(37, 122, 148),
+			Tertiary = Color3.fromRGB(101, 206, 221),
 
 			StrongText = Color3.fromHSV(0, 0, 1),        
 			WeakText = Color3.fromHSV(0, 0, 172/255)
@@ -1006,6 +1038,14 @@ function Library:create(options)
 		Description = "Copy Discord Server of MercuryPlus to Clipboard",
 		Callback = function()
 			setclipboard = 'https://discord.gg/JvxXM6rkNn'
+		end,
+	}
+
+	settingsTab:button{
+		Name = "Close UI",
+		Description = "Closes UI",
+		Callback = function(value)
+			getgenv().MercuryUI = closeUI
 		end,
 	}
 
