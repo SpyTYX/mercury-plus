@@ -907,7 +907,7 @@ function Library:create(options)
 		Size = UDim2.fromOffset(24, 24),
 		Position = UDim2.new(1, -78, 1, -10),
 		AnchorPoint = Vector2.new(1, 1),
-		Image = "http://www.roblox.com/asset/?id=12332662978"
+		Image = "http://www.roblox.com/asset/?id=12332722300"
 	}):tooltip("Themes")
 
 	local quickAccess = homePage:object("Frame", {
