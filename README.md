@@ -42,10 +42,7 @@ local MercuryPlus = loadstring(game:HttpGet("https://raw.githubusercontent.com/S
 ### **Create a Window**
 ```lua
 local Window = MercuryPlus:Create{
-  Name = 'MercuryPlus'
-  Size = UDim2.fromOffset(600, 400),
   Theme = MercuryPlus.Themes.Dark,
-  Link = 'https://github.com/SpyTYX/mercury-plus'
 }
 ```
 
