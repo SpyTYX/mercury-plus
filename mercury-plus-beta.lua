@@ -906,7 +906,7 @@ function Library:create(options)
 		Size = UDim2.fromOffset(24, 24),
 		Position = UDim2.new(1, -78, 1, -10),
 		AnchorPoint = Vector2.new(1, 1),
-		Image = "http://www.roblox.com/asset/?id=303528495"
+		Image = "http://www.roblox.com/asset/?id=12332722300"
 	}):tooltip("Themes")
 
 	local quickAccess = homePage:object("Frame", {
@@ -946,7 +946,7 @@ function Library:create(options)
 	local themesTab = Library.tab(mt, {
 		Name = "Themes",
 		Internal = themesTabIcon,
-		Icon = "rbxassetid://8559790237"
+		Icon = "rbxassetid://12332722300"
 	})
 	
 	themesTab:_theme_selector()
@@ -2979,7 +2979,7 @@ function Library:_theme_selector()
 
 	local themeContainer = self.container:object("Frame", {
 		Theme = {BackgroundColor3 = "Secondary"},
-		Size = UDim2.new(1, -20, 0, 385)
+		Size = UDim2.new(1, -20, 0, 370)
 	}):round(7)
 
 	local text = themeContainer:object("TextLabel", {
