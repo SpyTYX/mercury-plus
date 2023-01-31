@@ -935,13 +935,20 @@ function Library:create(options)
 		nilFolder = core:object("Folder"),
 	}, Library)
 
+	local themesTab = Library.tab(mt, {
+		Name = "Themes",
+		Internal = themesTabIcon,
+		Icon = "rbxassetid://8559790237"
+	})
+	
+	themesTab:_theme_selector()
+	
 	local settingsTab = Library.tab(mt, {
 		Name = "Settings",
 		Internal = settingsTabIcon,
 		Icon = "rbxassetid://8559790237"
 	})
 
-	settingsTab:_theme_selector()
 
 	settingsTab:keybind{
 		Name = "Toggle Key",
