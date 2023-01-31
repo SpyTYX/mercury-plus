@@ -9,7 +9,7 @@ I have not created this UI, or developed it. All UI credits goes to [Mercury UI]
 ***THIS PROJECT IS STILL IN BETA, THERE IS MANY BUGS AND STUFF.***
 
 ## Features
-- Customizable Themes (Extra Themes by MercuryPlus)
+- Customizable Themes
 - Browser-like Navigation
 - Buttons
 - Sliders
@@ -36,7 +36,7 @@ I have not created this UI, or developed it. All UI credits goes to [Mercury UI]
 
 ### **Get MercuryPlus Library**
 ```lua
-local MercuryPlus = loadstring(game:HttpGet("https://raw.githubusercontent.com/SpyTYX/mercury-plus/main/mercury-plus-beta.lua"))()
+local MercuryPlus = loadstring(game:HttpGet("https://raw.githubusercontent.com/SpyTYX/mercury-plus/main/mercury-plus.lua"))()
 ```
 
 ### **Create a Window**
@@ -87,8 +87,9 @@ Tab:TextBox{
 ```
 
 ### **Dropdowns**
-**Create:**
 ```lua
+Create:
+
 local Dropdown = Tab:Dropdown{
 	Name = 'Dropdown',
 	StartingText = 'Select Item',
@@ -102,16 +103,16 @@ local Dropdown = Tab:Dropdown{
     print(Items)
   end
 }
-```
-**Add Items:**
-```lua
+
+Add Items:
+
 Dropdown:AddItems({
   {"New Item", 69},
   420
 })
-```
-**Remove Items:**
-```lua
+
+Remove Items:
+
 MyDropdown:RemoveItems({
 	"NewItem", "Hello" --Names to get Removed (Uppercase/Lowercase ignored)
 })
