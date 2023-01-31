@@ -938,7 +938,7 @@ function Library:create(options)
 		Size = UDim2.fromOffset(24, 24),
 		Position = UDim2.new(1, -78, 1, -10),
 		AnchorPoint = Vector2.new(1, 1),
-		Image = "http://www.roblox.com/asset/?id=303528495"
+		Image = "http://www.roblox.com/asset/?id=8577523456"
 	}):tooltip("Themes")
 
 	local quickAccess = homePage:object("Frame", {
@@ -978,7 +978,7 @@ function Library:create(options)
 	local themesTab = Library.tab(mt, {
 		Name = "Themes",
 		Internal = themesTabIcon,
-		Icon = "rbxassetid://303528495"
+		Icon = "rbxassetid://8577523456"
 	})
 	
 	themesTab:_theme_selector()
@@ -1037,7 +1037,7 @@ function Library:create(options)
 		Name = "Discord Server",
 		Description = "Copy Discord Server of MercuryPlus to Clipboard",
 		Callback = function()
-			setclipboard = 'https://discord.gg/JvxXM6rkNn'
+			setclipboard('https://discord.gg/JvxXM6rkNn')
 		end,
 	}
 
@@ -1045,7 +1045,7 @@ function Library:create(options)
 		Name = "Close UI",
 		Description = "Closes UI",
 		Callback = function(value)
-			getgenv().MercuryUI = closeUI
+			MercuryUI = closeUI
 		end,
 	}
 
@@ -1973,39 +1973,11 @@ function Library:button(options)
 			end
 		end)
 
-		function Library:label(options)
-			options = self:set_defaults({
-				Name = "Label",
-				Description = nil,
-				Callback = function() end
-			}, options)
 		
-			local labelContainer = self.container:object("TextButton", {
-				Theme = {BackgroundColor3 = "Secondary"},
-				Size = UDim2.new(1, -20, 0, 52)
-			}):round(7)
-		
-			local text = labelContainer:object("TextLabel", {
-				BackgroundTransparency = 1,
-				Position = UDim2.fromOffset(10, (options.Description and 5) or 0),
-				Size = (options.Description and UDim2.new(0.5, -10, 0, 22)) or UDim2.new(0.5, -10, 1, 0),
-				Text = options.Name,
-				TextSize = 22,
-				Theme = {TextColor3 = "StrongText"},
-				TextXAlignment = Enum.TextXAlignment.Left
-			})
-		
-			if options.Description then
-				local description = labelContainer:object("TextLabel", {
-					BackgroundTransparency = 1,
-					Position = UDim2.fromOffset(10, 27),
-					Size = UDim2.new(0.5, -10, 0, 20),
-					Text = options.Description,
-					TextSize = 18,
-					Theme = {TextColor3 = "WeakText"},
-					TextXAlignment = Enum.TextXAlignment.Left
-				})
-			end
+
+		buttonContainer.MouseButton1Click:connect(function()
+			options.Callback()
+		end)
 	end
 	self:_resize_tab()
 
