@@ -2987,7 +2987,7 @@ function Library:_theme_selector()
 
 	local themeContainer = self.container:object("Frame", {
 		Theme = {BackgroundColor3 = "Secondary"},
-		Size = UDim2.new(1, -20, 0, 500)
+		Size = UDim2.new(1, -20, 0, 425)
 	}):round(7)
 
 	local text = themeContainer:object("TextLabel", {
