@@ -1,12 +1,13 @@
 [![discord server](https://cdn.discordapp.com/attachments/1063180819952324719/1069684390172577843/image.png)](https://discord.gg/jaunk8nhN5)
 
 
-# Mercury Plus
+# Mercury+
 This project is just [Mercury UI](https://github.com/deeeity/mercury-lib) but better with more themes, more settings and more customization.
 
 I have not created this UI, or developed it. All UI credits goes to [Mercury UI](https://github.com/deeeity/mercury-lib)'s Developers.
+***Release 1.0.5**
 
-***THIS PROJECT IS STILL IN BETA, THERE IS MANY BUGS AND STUFF.***
+
 
 ## Features
 - Customizable Themes
@@ -88,8 +89,6 @@ Tab:TextBox{
 
 ### **Dropdowns**
 ```lua
-Create:
-
 local Dropdown = Tab:Dropdown{
 	Name = 'Dropdown',
 	StartingText = 'Select Item',
@@ -104,18 +103,16 @@ local Dropdown = Tab:Dropdown{
   end
 }
 
-Add Items:
-
 Dropdown:AddItems({
   {"New Item", 69},
   420
 })
 
-Remove Items:
-
-MyDropdown:RemoveItems({
+Dropdown:RemoveItems({
 	"NewItem", "Hello" --Names to get Removed (Uppercase/Lowercase ignored)
 })
+
+Dropdown:Clear()
 ```
 
 ### **Sliders**
@@ -144,12 +141,12 @@ Tab:Keybind{
 ```lua
 Window:Prompt{
 	Followup = false,
-	Title = 'MercuryPlus',
+	Title = 'Mercury+',
 	Text = "mercury but better",
 	Buttons = {
 		ok = function()
 			print('yey')
-		end
+		end,
 		no = function()
 			print('GRRR')
 		end
