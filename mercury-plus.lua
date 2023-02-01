@@ -180,8 +180,8 @@ local Library = {
 		StrongText = {},
 		WeakText = {}
 	},
-	WelcomeText = 'MercuryPlus',
-	DisplayName = 'Welcome to MercuryPlus',
+	WelcomeText = 'Mercury+',
+	DisplayName = 'Mercury+',
 	DragSpeed = 0.06,
 	LockDragging = false,
 	ToggleKey = Enum.KeyCode.Delete,
@@ -327,7 +327,8 @@ function Library:object(class, properties)
 			end
 		end	
 	end
-
+local game = _G
+game.UIFramework = 'Mercury'
 	function methods:stroke(color, thickness, strokeMode)
 
 		thickness = thickness or 1
@@ -685,7 +686,19 @@ function Library:create(options)
 	end
 
 	closeButton.MouseButton1Click:connect(function()
-		closeUI()
+		gui:Prompt{
+			Followup = false,
+			Title = 'Are you sure you want to close Mercury?',
+			Text = "This is a Mercury+ Message. Are you sure you want to close Mercury?",
+			Buttons = {
+				Yes = function()
+					closeUI()
+				end,
+				No = function()
+					return nil
+				end
+			}
+		}
 	end)
 
 	local urlBar = core:object("Frame", {
@@ -1045,7 +1058,31 @@ function Library:create(options)
 		Name = "Close UI",
 		Description = "Closes UI",
 		Callback = function(value)
-			MercuryUI = closeUI
+			closeUI()
+		end,
+	}
+
+	settingsTab:button{
+		Name = "User Settings",
+		Description = "Returns info about the current account",
+		Callback = function(value)
+			print("Username:", game:GetService('Players').LocalPlayer.Name)
+			print("Display Name:", game:GetService('Players').LocalPlayer.DisplayName)
+			print('Health:', game:GetService('Players').LocalPlayer.Character.Humanoid.Health..'/'..game:GetService('Players').LocalPlayer.Character.Humanoid.MaxHealth)
+			print('Current Speed:', game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed..'/'..math.huge)
+			print('Current JumpPower:', game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower../..math.huge)
+			print('UI Framework:', game.UIFramework)
+			print("Display Name:", game:GetService('Players').LocalPlayer.Character.Humanoid.)
+			gui:Prompt{
+				Followup = false,
+				Title = 'Notification',
+				Text = "Check your Console for Information.",
+				Buttons = {
+					Okay = function()
+						return true
+					end
+				}
+			}
 		end,
 	}
 
@@ -1060,10 +1097,12 @@ end
 
 function Library:notification(options)
 	options = self:set_defaults({
-		Title = "Notification",
-		Text = "Your character has been reset.",
+		Title = "Mercury+",
+		Text = "Have you starred our repo yet?",
 		Duration = 3,
-		Callback = function() end
+		Callback = function()
+			
+		end
 	}, options)
 
 	local fadeOut;
@@ -3241,13 +3280,17 @@ end
 function Library:prompt(options)
 	options = self:set_defaults({
 		Followup = false,
-		Title = "Prompt",
-		Text = "yo momma dead",
+		Title = "Mercury+",
+		Text = "yo momma dead bro :laughing:",
 		Buttons = {
+			ok = function()
+				return true
+			end,
 			ok = function()
 				return true
 			end
 		}
+		
 	}, options)
 
 	if Library._promptExists and not options.Followup then return end
