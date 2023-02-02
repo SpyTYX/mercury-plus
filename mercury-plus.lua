@@ -327,8 +327,7 @@ function Library:object(class, properties)
 			end
 		end	
 	end
-local game = _G
-game.UIFramework = 'Mercury'
+
 	function methods:stroke(color, thickness, strokeMode)
 
 		thickness = thickness or 1
@@ -1071,8 +1070,7 @@ function Library:create(options)
 			print('Health:', game:GetService('Players').LocalPlayer.Character.Humanoid.Health..'/'..game:GetService('Players').LocalPlayer.Character.Humanoid.MaxHealth)
 			print('Current Speed:', game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed..'/'..math.huge)
 			print('Current JumpPower:', game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower../..math.huge)
-			print('UI Framework:', game.UIFramework)
-			print("Display Name:", game:GetService('Players').LocalPlayer.Character.Humanoid.)
+			print('UI Framework: Mercury+')
 			gui:Prompt{
 				Followup = false,
 				Title = 'Notification',
@@ -3286,9 +3284,6 @@ function Library:prompt(options)
 			ok = function()
 				return true
 			end,
-			ok = function()
-				return true
-			end
 		}
 		
 	}, options)
