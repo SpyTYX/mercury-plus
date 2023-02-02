@@ -1221,7 +1221,7 @@ end
 
 function Library:tab(options)
 	options = self:set_defaults({
-		Name = "New Tab",
+		Name = "Mercury+ Tab",
 		Icon = "rbxassetid://8569322835"
 	}, options)
 
@@ -1229,7 +1229,7 @@ function Library:tab(options)
 		AnchorPoint = Vector2.new(0, 1),
 		Visible = false,
 		BackgroundTransparency = 1,
-		Position = UDim2.fromScale(0, 1),
+		Position = UDim2.fromScale(0, 0),
 		Size = UDim2.fromScale(1, 1),
 		ScrollBarThickness = 0,
 		ScrollingDirection = Enum.ScrollingDirection.Y
@@ -2032,11 +2032,11 @@ function Library:testing(options)
 		Name = "test",
 		Description = nil,
 	}, options)
-	local buttonContainer = self.container:object("TextLabel", {
+	local mplabelContainer = self.container:object("TextLabel", {
 		Theme = {BackgroundColor3 = "Secondary"},
 		Size = UDim2.new(1, -20, 0, 52)
 	}):round(7)
-	local text = buttonContainer:object("TextLabel", {
+	local text = mplabelContainer:object("TextLabel", {
 		BackgroundTransparency = 1,
 		Position = UDim2.fromOffset(10, (options.Description and 5) or 0),
 		Size = (options.Description and UDim2.new(0.5, -10, 0, 22)) or UDim2.new(0.5, -10, 1, 0),
@@ -2046,7 +2046,7 @@ function Library:testing(options)
 		TextXAlignment = Enum.TextXAlignment.Left
 	})
 	if options.Description then
-		local description = buttonContainer:object("TextLabel", {
+		local description = mplabelContainer:object("TextLabel", {
 			BackgroundTransparency = 1,
 			Position = UDim2.fromOffset(10, 27),
 			Size = UDim2.new(0.5, -10, 0, 20),
@@ -2056,14 +2056,6 @@ function Library:testing(options)
 			TextXAlignment = Enum.TextXAlignment.Left
 		})
 	end
-	local icon = buttonContainer:object("ImageLabel", {
-		AnchorPoint = Vector2.new(1, 0.5),
-		BackgroundTransparency = 1,
-		Position = UDim2.new(1, -11, 0.5, 0),
-		Size = UDim2.fromOffset(26, 26),
-		Image = "rbxassetid://8498776661",
-		Theme = {ImageColor3 = "Tertiary"}
-	})
 	do
 	end
 	self:_resize_tab()
