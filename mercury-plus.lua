@@ -1041,6 +1041,26 @@ function Library:create(options)
 		end,
 	}
 
+	settingsTab:button{
+		Name = "Close UI",
+		Description = "Closes UI",
+		Callback = function(value)
+			closeUI()
+		end,
+	}
+
+	settingsTab:button{
+		Name = "User Settings",
+		Description = "Returns info about the current account",
+		Callback = function(value)
+			print("Username:", game:GetService('Players').LocalPlayer.Name)
+			print("Display Name:", game:GetService('Players').LocalPlayer.DisplayName)
+			print('Health:', game:GetService('Players').LocalPlayer.Character.Humanoid.Health..'/'..game:GetService('Players').LocalPlayer.Character.Humanoid.MaxHealth)
+			print('Current Speed:', game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed..'/'..math.huge)
+			print('Current JumpPower:', game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower..'/'..math.huge)
+			print('UI Framework: Mercury+')
+		end,
+	}
 	rawset(mt, "creditsContainer", creditsTab.container)
 	creditsTab:credit{Name = "Abstract", Description = "MercuryUI Developer", Discord = "Abstract#8007", V3rmillion = "AbstractPoo"}
 	creditsTab:credit{Name = "Deity", Description = "MercuryUI Developer", Discord = "Deity#0228", V3rmillion = "0xDEITY"}
@@ -1053,7 +1073,9 @@ function Library:notification(options)
 		Title = "Mercury+",
 		Text = "Have you starred our repo yet?",
 		Duration = 3,
-		Callback = function() end
+		Callback = function()
+			
+		end
 	}, options)
 
 	local fadeOut;
