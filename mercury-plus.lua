@@ -2027,9 +2027,9 @@ function Library:button(options)
 	return methods
 end
 
-function Library:label(options)
+function Library:testing(options)
 	options = self:set_defaults({
-		Name = "Label",
+		Name = "test",
 		Description = nil,
 	}, options)
 	local buttonContainer = self.container:object("TextLabel", {
