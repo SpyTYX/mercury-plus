@@ -1229,7 +1229,7 @@ function Library:tab(options)
 		AnchorPoint = Vector2.new(0, 1),
 		Visible = false,
 		BackgroundTransparency = 1,
-		Position = UDim2.fromScale(0, 0),
+		Position = UDim2.fromScale(0, 1),
 		Size = UDim2.fromScale(1, 1),
 		ScrollBarThickness = 0,
 		ScrollingDirection = Enum.ScrollingDirection.Y
