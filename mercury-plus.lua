@@ -524,7 +524,7 @@ function Library:create(options)
 	end
 
 	options = self:set_defaults({
-		Name = "MercuryPlus",
+		Name = "Mercury+",
 		Size = UDim2.fromOffset(600, 400),
 		Theme = self.Themes[settings.Theme],
 		Link = "https://github.com/SpyTYX/mercury-plus"
@@ -685,19 +685,7 @@ function Library:create(options)
 	end
 
 	closeButton.MouseButton1Click:connect(function()
-		gui:Prompt{
-			Followup = false,
-			Title = 'Are you sure you want to close Mercury?',
-			Text = "This is a Mercury+ Message. Are you sure you want to close Mercury?",
-			Buttons = {
-				Yes = function()
-					closeUI()
-				end,
-				No = function()
-					return nil
-				end
-			}
-		}
+		closeUI()
 	end)
 
 	local urlBar = core:object("Frame", {
@@ -1071,16 +1059,6 @@ function Library:create(options)
 			print('Current Speed:', game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed..'/'..math.huge)
 			print('Current JumpPower:', game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower../..math.huge)
 			print('UI Framework: Mercury+')
-			gui:Prompt{
-				Followup = false,
-				Title = 'Notification',
-				Text = "Check your Console for Information.",
-				Buttons = {
-					Okay = function()
-						return true
-					end
-				}
-			}
 		end,
 	}
 
@@ -3283,7 +3261,7 @@ function Library:prompt(options)
 		Buttons = {
 			ok = function()
 				return true
-			end,
+			end
 		}
 		
 	}, options)
