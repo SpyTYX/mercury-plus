@@ -1043,7 +1043,7 @@ function Library:create(options)
 
 	settingsTab:button{
 		Name = "Close UI",
-		Description = "Closes UI",
+		Description = "Closes Mercury+",
 		Callback = function(value)
 			closeUI()
 		end,
@@ -1064,7 +1064,7 @@ function Library:create(options)
 			print('Current JumpPower:', game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower..'/'..math.huge)
 			print('UI Framework:', UIF)
 			print('Roblox Version:', rblxversion)
-			print('User Ping:', game.Players.LocalPlayer:GetNetworkPing() * 1000 .. 'ms')
+			print('User Ping:', game:GetService("Players").LocalPlayer:GetNetworkPing() * 1000 .. 'ms')
 			print('User FPS:', getFps())
 		end,
 	}
@@ -2058,16 +2058,6 @@ function Library:label(options)
 	end
 	do
 	end
-	self:_resize_tab()
-end
-
-function Library:line(options)
-	options = self:set_defaults({
-	}, options)
-	local lineContainer = self.container:object("TextLabel", {
-		Theme = {BackgroundColor3 = "Secondary"},
-		Size = UDim2.new(1, -1, 0, 52)
-	}):round(7)
 	self:_resize_tab()
 end
 
