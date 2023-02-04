@@ -1,5 +1,4 @@
 --[[
-
 ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
 █░░░░░░██████████░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░░░███░░░░░░░░░░░░░░█░░░░░░██░░░░░░█░░░░░░░░░░░░░░░░███░░░░░░░░██░░░░░░░░█
 █░░▄▀░░░░░░░░░░░░░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀▄▀░░███░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░██░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀▄▀░░███░░▄▀▄▀░░██░░▄▀▄▀░░█
@@ -13,7 +12,6 @@
 █░░▄▀░░██████████░░▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░██░░▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀░░██░░▄▀▄▀▄▀░░███████░░▄▀░░███████
 █░░░░░░██████████░░░░░░█░░░░░░░░░░░░░░█░░░░░░██░░░░░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█░░░░░░██░░░░░░░░░░███████░░░░░░███████
 ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
-
 ██████████████████      ██                    ██             ██      ██████████████████
 ██              ██      ██                    ██             ██      ██
 ██              ██      ██                    ██             ██      ██
@@ -23,13 +21,9 @@
 ██                      ██                    ██             ██                      ██
 ██                      ██                    ██             ██                      ██
 ██                      ████████████████      █████████████████      ██████████████████
-
-
 last edited: 31/01
 developers:
-
 Moons (V3rm: Moozys) (Discord: Moons#9999)
-
 ]]
 
 local TweenService = game:GetService("TweenService")
@@ -484,13 +478,11 @@ function Library:lighten(color, f)
 end
 
 --[[ old lighten/darken functions, may revert if contrast gets fucked up
-
 	function Library:darken(color, f)
 		local h, s, v = Color3.toHSV(color)
 		f = f or 15
 		return Color3.fromHSV(h, s, math.clamp(v - (f/255), 0, 1))
 	end
-
 	function Library:lighten(color, f)
 		local h, s, v = Color3.toHSV(color)
 		f = f or 15
@@ -1043,7 +1035,7 @@ function Library:create(options)
 
 	settingsTab:button{
 		Name = "Close UI",
-		Description = "Closes Mercury+",
+		Description = "Closes UI",
 		Callback = function(value)
 			closeUI()
 		end,
@@ -1064,7 +1056,7 @@ function Library:create(options)
 			print('Current JumpPower:', game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower..'/'..math.huge)
 			print('UI Framework:', UIF)
 			print('Roblox Version:', rblxversion)
-			print('User Ping:', game:GetService("Players").LocalPlayer:GetNetworkPing() * 1000 .. 'ms')
+			print('User Ping:', game.Players.LocalPlayer:GetNetworkPing() * 1000 .. 'ms')
 			print('User FPS:', getFps())
 		end,
 	}
@@ -1221,7 +1213,7 @@ end
 
 function Library:tab(options)
 	options = self:set_defaults({
-		Name = "Mercury+ Tab",
+		Name = "New Tab",
 		Icon = "rbxassetid://8569322835"
 	}, options)
 
@@ -2029,14 +2021,14 @@ end
 
 function Library:label(options)
 	options = self:set_defaults({
-		Name = "test",
+		Name = "Label",
 		Description = nil,
 	}, options)
-	local mplabelContainer = self.container:object("TextLabel", {
+	local buttonContainer = self.container:object("TextLabel", {
 		Theme = {BackgroundColor3 = "Secondary"},
 		Size = UDim2.new(1, -20, 0, 52)
 	}):round(7)
-	local text = mplabelContainer:object("TextLabel", {
+	local text = buttonContainer:object("TextLabel", {
 		BackgroundTransparency = 1,
 		Position = UDim2.fromOffset(10, (options.Description and 5) or 0),
 		Size = (options.Description and UDim2.new(0.5, -10, 0, 22)) or UDim2.new(0.5, -10, 1, 0),
@@ -2046,7 +2038,7 @@ function Library:label(options)
 		TextXAlignment = Enum.TextXAlignment.Left
 	})
 	if options.Description then
-		local description = mplabelContainer:object("TextLabel", {
+		local description = buttonContainer:object("TextLabel", {
 			BackgroundTransparency = 1,
 			Position = UDim2.fromOffset(10, 27),
 			Size = UDim2.new(0.5, -10, 0, 20),
@@ -2056,6 +2048,14 @@ function Library:label(options)
 			TextXAlignment = Enum.TextXAlignment.Left
 		})
 	end
+	local icon = buttonContainer:object("ImageLabel", {
+		AnchorPoint = Vector2.new(1, 0.5),
+		BackgroundTransparency = 1,
+		Position = UDim2.new(1, -11, 0.5, 0),
+		Size = UDim2.fromOffset(26, 26),
+		Image = "rbxassetid://8498776661",
+		Theme = {ImageColor3 = "Tertiary"}
+	})
 	do
 	end
 	self:_resize_tab()
@@ -3708,3 +3708,58 @@ function Library:textbox(options)
 
 	return methods
 end
+
+function Library:label(options)
+
+	options = self:set_defaults({
+		Text = "Label title",
+		Description = "Label text",
+	}, options)
+
+	local labelContainer = self.container:object("TextButton", {
+		Theme = {BackgroundColor3 = "Secondary"},
+		Size = UDim2.new(1, -20, 0, 52),
+		BackgroundTransparency = 1
+	}):round(7):stroke("Secondary", 2)
+
+	local text = labelContainer:object("TextLabel", {
+		BackgroundTransparency = 1,
+		Position = UDim2.fromOffset(10, 5),
+		Size = UDim2.new(0.5, -10, 0, 22),
+		Text = options.Text,
+		TextSize = 22,
+		Theme = {TextColor3 = "StrongText"},
+		TextXAlignment = Enum.TextXAlignment.Left
+	})
+
+	local description = labelContainer:object("TextLabel", {
+		BackgroundTransparency = 1,
+		Position = UDim2.new(0, 10, 1, -5),
+		Size = UDim2.new(0.5, -10, 1, -22),
+		Text = options.Description,
+		TextSize = 18,
+		AnchorPoint = Vector2.new(0, 1),
+		Theme = {TextColor3 = "WeakText"},
+		TextXAlignment = Enum.TextXAlignment.Left
+	})
+
+	self:_resize_tab()
+
+	local methods = {}
+
+	function methods:SetText(txt)
+		text.Text = txt
+	end
+
+	function methods:SetDescription(txt)
+		description.Text = txt
+	end
+
+	return methods
+end
+
+return setmetatable(Library, {
+	__index = function(_, i)
+		return rawget(Library, i:lower())
+	end
+})
