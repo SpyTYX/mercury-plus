@@ -2058,13 +2058,13 @@ function Library:line(options)
 	}, options)
 	local mplabelContainer = self.container:object("TextLabel", {
 		Theme = {BackgroundColor3 = "Secondary"},
-		Size = UDim2.new(0.3, -20, 0, 42)
+		Size = UDim2.new(0.5, -2, 0, 20)
 	}):round(7)
 	if options.Description then
 		local description = mplabelContainer:object("TextLabel", {
 			BackgroundTransparency = 1,
 			TextTransparency = 1,
-			Size = UDim2.new(0.5, -2, 0, 20),
+			Size = UDim2.new(0, -0, 0, 0),
 			TextSize = 0,
 			Theme = {TextColor3 = "WeakText"}
 		})
