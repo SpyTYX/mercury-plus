@@ -2063,7 +2063,10 @@ function Library:line(options)
 	if options.Description then
 		local description = mplabelContainer:object("TextLabel", {
 			BackgroundTransparency = 1,
-			TextTransparency = 1
+			TextTransparency = 1,
+			Size = UDim2.new(0.5, -2, 0, 20),
+			TextSize = 0,
+			Theme = {TextColor3 = "WeakText"}
 		})
 	end
 	do
