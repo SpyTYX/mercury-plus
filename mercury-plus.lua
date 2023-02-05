@@ -2021,14 +2021,14 @@ end
 
 function Library:label(options)
 	options = self:set_defaults({
-		Name = "Label",
-		Description = nil,
+		Name = "Title",
+		Description = 'Description',
 	}, options)
-	local buttonContainer = self.container:object("TextLabel", {
+	local mplabelContainer = self.container:object("TextLabel", {
 		Theme = {BackgroundColor3 = "Secondary"},
 		Size = UDim2.new(1, -20, 0, 52)
 	}):round(7)
-	local text = buttonContainer:object("TextLabel", {
+	local text = mplabelContainer:object("TextLabel", {
 		BackgroundTransparency = 1,
 		Position = UDim2.fromOffset(10, (options.Description and 5) or 0),
 		Size = (options.Description and UDim2.new(0.5, -10, 0, 22)) or UDim2.new(0.5, -10, 1, 0),
@@ -2038,7 +2038,7 @@ function Library:label(options)
 		TextXAlignment = Enum.TextXAlignment.Left
 	})
 	if options.Description then
-		local description = buttonContainer:object("TextLabel", {
+		local description = mplabelContainer:object("TextLabel", {
 			BackgroundTransparency = 1,
 			Position = UDim2.fromOffset(10, 27),
 			Size = UDim2.new(0.5, -10, 0, 20),
@@ -2048,14 +2048,24 @@ function Library:label(options)
 			TextXAlignment = Enum.TextXAlignment.Left
 		})
 	end
-	local icon = buttonContainer:object("ImageLabel", {
-		AnchorPoint = Vector2.new(1, 0.5),
-		BackgroundTransparency = 1,
-		Position = UDim2.new(1, -11, 0.5, 0),
-		Size = UDim2.fromOffset(26, 26),
-		Image = "rbxassetid://8498776661",
-		Theme = {ImageColor3 = "Tertiary"}
-	})
+	do
+	end
+	self:_resize_tab()
+end
+
+function Library:line(options)
+	options = self:set_defaults({
+	}, options)
+	local mplabelContainer = self.container:object("TextLabel", {
+		Theme = {BackgroundColor3 = "Secondary"},
+		Size = UDim2.new(1, -3, 0, 52)
+	}):round(7)
+	if options.Description then
+		local description = mplabelContainer:object("TextLabel", {
+			BackgroundTransparency = 1,
+			TextTransparency = 1
+		})
+	end
 	do
 	end
 	self:_resize_tab()
@@ -3704,55 +3714,6 @@ function Library:textbox(options)
 
 	function methods:Set(text)
 		textBox.Text = text
-	end
-
-	return methods
-end
-
-function Library:label(options)
-
-	options = self:set_defaults({
-		Text = "Label title",
-		Description = "Label text",
-	}, options)
-
-	local labelContainer = self.container:object("TextButton", {
-		Theme = {BackgroundColor3 = "Secondary"},
-		Size = UDim2.new(1, -20, 0, 52),
-		BackgroundTransparency = 1
-	}):round(7):stroke("Secondary", 2)
-
-	local text = labelContainer:object("TextLabel", {
-		BackgroundTransparency = 1,
-		Position = UDim2.fromOffset(10, 5),
-		Size = UDim2.new(0.5, -10, 0, 22),
-		Text = options.Text,
-		TextSize = 22,
-		Theme = {TextColor3 = "StrongText"},
-		TextXAlignment = Enum.TextXAlignment.Left
-	})
-
-	local description = labelContainer:object("TextLabel", {
-		BackgroundTransparency = 1,
-		Position = UDim2.new(0, 10, 1, -5),
-		Size = UDim2.new(0.5, -10, 1, -22),
-		Text = options.Description,
-		TextSize = 18,
-		AnchorPoint = Vector2.new(0, 1),
-		Theme = {TextColor3 = "WeakText"},
-		TextXAlignment = Enum.TextXAlignment.Left
-	})
-
-	self:_resize_tab()
-
-	local methods = {}
-
-	function methods:SetText(txt)
-		text.Text = txt
-	end
-
-	function methods:SetDescription(txt)
-		description.Text = txt
 	end
 
 	return methods
